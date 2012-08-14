@@ -1,0 +1,43 @@
+body {
+	margin-top: 60px;
+}
+
+.form_container {
+	width: 500px; 
+	margin: auto;
+}
+
+.largeform_container {
+	width: 554px;
+	margin: auto;
+}
+
+.table_container {
+	padding-left: 40px; 
+	padding-right: 40px;
+}
+
+.removeProductBtn {
+	margin-bottom: 8px;
+}
+
+tr {
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+td {
+	overflow: auto;
+	max-width: 150px;
+	vertical-align: middle;
+}
+
+#export_btn {
+	margin-right: 20px;
+	margin-top: 3px;
+	float: right;
+}
+
+.photo_cell {
+	width: 50px;
+}
