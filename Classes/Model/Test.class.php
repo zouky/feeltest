@@ -115,24 +115,32 @@ public function initWithDBTest ($db_test) {
         $this->dateFin      = $db_test['dateFin'];
         $this->idActivite   = $db_test['idActivite'];
         $this->commentaire  = $db_test['commentaire'];
-        //$this->nomActivite  = $db_test['activite.nom'];
     }
     
 public function displayAsCell(){
-//                    $activity_name = '';
-//			if($this->idActivite != null){
-//				$activiteManager = new ActiviteManager();
-//				$activite = $activiteManager->getActivityById($this->idActivite);
-//				$activity_name = $activite->getNom();
-//			}
-			echo '<tr id="'.$this->id.'"><td>'.$this->id.'</td><td>'.$this->nom.'</td><td>'.$this->description.'</td><td>'.$this->commentaire.'</td><td><a href="edit.php?id='.$this->id.'" class="btn btn-mini"><i class="icon-edit"></i> Edit</a> <a href="delete.php?id='.$this->id.'" class="btn btn-danger btn-mini"><i class="icon-trash icon-white"></i> Delete</a></td></tr>';
+    
+    $activite = new activiteManager();
+    $objActivite = $activite->getActiviteById($this->idActivite);
+			echo '<tr id="'.$this->id.'">
+                            <td>'.$this->id.'</td>
+                                <td>'.$this->nom.'</td>
+                                    <td>'.$this->client.'</td>
+                                        <td>'.$this->reference.'</td>
+                                            <td>'.$this->detail.'</td>
+                                                <td>'.$objActivite->getNom().'</td>
+                                                    <td>'.$this->dateDebut.'</td>
+                                                        <td>'.$this->dateFin.'</td>
+                                                            <td>'.$this->commentaire.'</td>
+                                            <td><a href="edit.php?id='.$this->id.'" class="btn btn-mini"><i class="icon-edit"></i> Edit</a> 
+                                                <a href="delete.php?id='.$this->id.'" class="btn btn-danger btn-mini"><i class="icon-trash icon-white"></i>
+                                                    Delete</a></td></tr>';
             }
 
-public function displayAsOption($selectedRestaurant = -1){
-        if($selectedRestaurant == $this->id){
-                echo '<option value="'.$this->id.'" selected="selected">'.$this->name.'</option>';				
+public function displayAsOption($selectedTest = -1){
+        if($selectedTest == $this->id){
+                echo '<option value="'.$this->id.'" selected="selected">'.$this->nom.'</option>';				
         } else {
-                echo '<option value="'.$this->id.'">'.$this->name.'</option>';				
+                echo '<option value="'.$this->id.'">'.$this->nom.'</option>';				
         }
 }
     }

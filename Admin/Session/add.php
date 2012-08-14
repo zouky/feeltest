@@ -1,22 +1,21 @@
 <?php
 require_once('../../_include.php');
-$page = 1;
 
 // If creation of restaurant
 if (isset($_POST['nom'])) {
     extract($_POST);
 
-    if (intval($idActivite) == -1) {
-        $idActivite = null;
+    if (intval($idTest) == -1) {
+        $idTest = null;
     }
 
-    if (strlen($nom) != 0 && strlen($client) != 0) {
+    if (strlen($nom) != 0) {
 
-        $objTest = new Test(0, $nom, $client, $reference, $detail, $dateDebut, $dateFin, $idActivite, $commentaire);
-        $testManager = new TestManager();
-        $testManager->addTest($objTest);
+        $objSession = new Session(0, $nom, $dateDebut, $dateFin, $idTest, $commentaire, $lieu);
+        $sessionManager = new sessionManager();
+        $sessionManager->addSession($objSession);
 
-        header('Location: '.$siteUrl.'/Admin/Test');
+        //header('Location: '.$siteUrl.'/Admin/Session');
     }
 }
 ?>
@@ -25,7 +24,7 @@ if (isset($_POST['nom'])) {
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Restaurants</title>
+        <title>Session</title>
         <link rel="stylesheet" href="../../libraries/bootstrap/css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="../../libraries/smoothness/jquery-ui-1.8.16.custom.css" type="text/css" />
         <link rel="stylesheet" href="../../css/style.css" type="text/css">
@@ -38,26 +37,22 @@ if (isset($_POST['nom'])) {
         include('../../_header.php');
 
         // Get all menus
-        $activiteManager = new activiteManager();
-        $allActivites = $activiteManager->getAllActivites();
+        $testManager = new TestManager();
+        $allTests = $testManager->getAllTests();
         ?>
         <div class="form_container">
             <form action="add.php" method="post" class="well">
-                <h2>Nouveau test</h2><br />
+                <h2>Nouvelle session</h2><br />
                 <label for="nom">Nom</label>
                 <input type="text" name="nom" id="nom" placeholder="Nom" class="span6"/>
-                <label for="client">Client</label>
-                <input type="text" name="client" id="client" placeholder="Client" class="span6"/>
-                <label for="reference">Référence</label>
-                <input type="text" name="reference" id="reference" placeholder="Référence" class="span6"/>
-                <label for="reference">Détail</label>
-                <input type="text" name="detail" id="detail" placeholder="Détail" class="span6"/>
-                <label for="idActivite">Activité</label>
-                <select name="idActivite" id="current_menu" class="span6">
-                    <option value="-1" selected="selected">Choix de l'activité</option>
+                <label for="lieu">Lieu</label>
+                <input type="text" name="lieu" id="lieu" placeholder="Lieu" class="span6"/>
+                <label for="idTest">Test</label>
+                <select name="idTest" id="idTest" class="span6">
+                    <option value="-1" selected="selected">Choix du test</option>
                     <?php
-                    foreach ($allActivites as $objActivite) {
-                        echo '<option value="' . $objActivite->getId() . '">' . $objActivite->getNom() . '</option>';
+                    foreach ($allTests as $objTest) {
+                        echo '<option value="' . $objTest->getId() . '">' . $objTest->getNom() . '</option>';
                     }
                     ?>
                 </select>

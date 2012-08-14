@@ -16,23 +16,21 @@ require_once('../../_include.php');
 
         // Get all restaurants
 
-        $testManager = new testManager();
-        $allTests = $testManager->getAllTests();
+        $sessionManager = new sessionManager();
+        $allSessions = $sessionManager->getAllSessions();
         ?>
 
         <div class="table_container">
-            <h2>Tests</h2>
-            <a class="btn btn-primary" href="add.php"><i class="icon-plus icon-white"></i> Ajouter un test</a>
+            <h2>Sessions</h2>
+            <a class="btn btn-primary" href="add.php"><i class="icon-plus icon-white"></i> Ajouter une session</a>
             <br /><br />
             <table class="table table-striped table-bordered table-condensed">
                 <thead>
                     <tr>
                         <th>Id</th>
                         <th>Nom</th>
-                        <th>Client</th>
-                        <th>Référence</th>
-                        <th>Détail</th>
-                        <th>Activité</th>
+                        <th>Lieu</th>
+                        <th>Test</th>
                         <th>Date de début</th>
                         <th>Date de fin</th>
                         <th>Commentaire</th>
@@ -41,8 +39,8 @@ require_once('../../_include.php');
                 </thead>
                 <?php
                 
-                foreach ($allTests as $test) {
-                    $test->displayAsCell();
+                foreach ($allSessions as $session) {
+                    $session->displayAsCell();
                 }
                 ?>
             </table>

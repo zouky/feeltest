@@ -38,6 +38,7 @@
 						<th>Name</th>
 						<th>Description</th>
 						<th>Commentaire</th>
+                                                <th>Action</th>
 					</tr>
 				</thead>
 				<?php

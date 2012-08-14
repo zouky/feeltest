@@ -38,8 +38,9 @@
 				$activite->initWithDBActivite($result);
 					
 				$query->closeCursor();
-				return $activite;	
+					
 			}
+                        return $activite;
 		}
 		
 		public function addActivite($activite){
@@ -47,6 +48,8 @@
 				INSERT INTO activite(nom, description, commentaire)
 				VALUES(:nom, :description, :commentaire)
 			');
+                        
+                        $success = false;
 			
 			if($query){
 				$query->bindValue(':nom', $activite->getNom());
@@ -56,8 +59,10 @@
 				$success =  $query->execute();
 				$query->closeCursor();
 				
-				return $success;
+				
 			}
+                        
+                        return $success;
 		}
 		
 		public function updateActivite($activite){

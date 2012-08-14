@@ -4,17 +4,15 @@
 		
 	// If creation of menu
 	if(isset($_POST['nom'], $_POST['description'])){
-		$nom                = $_POST['nom'];
-		$description        = $_POST['description'];
-		$commentaire        = $_POST['coommentaire'];
+		extract($_POST);
 		
 		if(strlen($nom) != 0 && strlen($description) != 0){
-			$newActivite 	 = new Activite($name, $description, $commentaire);
+			$newActivite 	 = new Activite(0, $nom, $description, $commentaire);
 			$activiteManager = new ActiviteManager();
 			$activiteManager->addActivite($newActivite);
 			
 			
-			header('Location: http://localhost/Feeltest/Admin/Activite');
+			header('Location: '.$siteUrl.'/Admin/Activite');
 		}
 	}
 ?>
