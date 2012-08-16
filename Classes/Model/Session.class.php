@@ -108,9 +108,9 @@ class Session {
                                                     <td>' . $this->dateDebut . '</td>
                                                         <td>' . $this->dateFin . '</td>
                                                             <td>' . $this->commentaire . '</td>
-                                            <td><a href="edit.php?id=' . $this->id . '" class="btn btn-mini"><i class="icon-edit"></i> Edit</a> 
+                                            <td><a href="edit.php?id=' . $this->id . '" class="btn btn-mini"><i class="icon-edit"></i> Editer</a> 
                                                 <a href="delete.php?id=' . $this->id . '" class="btn btn-danger btn-mini"><i class="icon-trash icon-white"></i>
-                                                    Delete</a></td></tr>';
+                                                    Supprimer</a></td></tr>';
     }
 
 }

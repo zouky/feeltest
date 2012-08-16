@@ -6,7 +6,7 @@ require_once('../../_include.php');
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Tests</title>
+        <title>Sessions</title>
         <link rel="stylesheet" href="../../libraries/bootstrap/css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="../../css/style.css" type="text/css">
     </head>

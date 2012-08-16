@@ -2,7 +2,7 @@
 	require_once('../../_include.php'); 
 	$page = 2;
 		
-	// If creation of menu
+	// If creation of activity
 	if(isset($_POST['nom'], $_POST['description'])){
 		extract($_POST);
 		

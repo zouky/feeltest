@@ -1,16 +1,13 @@
 <?php 
-	session_start();
 
 	require_once('../../_include.php'); 
 	$page = 2;
-	
-	// If id, assign the session menu to edit it
+
 	if(isset($_GET['id'])){
 		$activiteManager = new ActiviteManager();
 		$activite = $activiteManager->getActiviteById($_GET['id']);
 	}
 	
-	// If edition of menu
 	if(isset($_POST['id'], $_POST['nom'], $_POST['description'])){
 		$nom		 = $_POST['nom'];
 		$description     = $_POST['description'];
@@ -34,7 +31,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Edit menu</title>
+		<title>Editer une activite</title>
 		<link rel="stylesheet" href="../../libraries/bootstrap/css/bootstrap.min.css" type="text/css">
 		<link rel="stylesheet" href="../../css/style.css" type="text/css">
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
@@ -45,7 +42,7 @@
 		?>
 		<div class="largeform_container">
 			<form action="edit.php" method="post" class="well">
-				<h2>Edit menu</h2><br />
+				<h2>Editer une Activite</h2><br />
 				<?php
 					echo '<input type="text" name="id" value="'.$activite->getId().'" style="display:none" />';
 				?>

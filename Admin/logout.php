@@ -1,5 +1,5 @@
 <?php
 	session_start();
 	unset($_SESSION['user']);
-	header('Location: http://localhost/Feeltest/Admin');
+	header('Location: '.$siteUrl.'/Admin/');
 ?>

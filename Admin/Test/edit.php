@@ -4,13 +4,13 @@
 	require_once('../../_include.php'); 
 	$page = 1;
 	
-	// If id get the restaurant
+	// If id get the test
 	if(isset($_GET['id'])){
 		$restaurantManager = new RestaurantManager();
 		$restaurant = $restaurantManager->getRestaurantById($_GET['id']);
 	}
 	
-	// If edition of restaurant
+	// If edition of test
 	if(isset($_POST['id'], $_POST['name'], $_POST['city'])){
 		$name = $_POST['name'];
 		$city = $_POST['city'];

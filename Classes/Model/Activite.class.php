@@ -65,7 +65,7 @@ public function initWithDBActivite($activite) {
 }
 
 public function displayAsCell(){
-			echo '<tr id="'.$this->id.'"><td>'.$this->id.'</td><td>'.$this->nom.'</td><td>'.$this->description.'</td><td>'.$this->commentaire.'</td><td><a href="edit.php?id='.$this->id.'" class="btn btn-mini"><i class="icon-edit"></i> Edit</a> <a href="delete.php?id='.$this->id.'" class="btn btn-danger btn-mini"><i class="icon-trash icon-white"></i> Delete</a></td></tr>';
+			echo '<tr id="'.$this->id.'"><td>'.$this->id.'</td><td>'.$this->nom.'</td><td>'.$this->description.'</td><td>'.$this->commentaire.'</td><td><a href="edit.php?id='.$this->id.'" class="btn btn-mini"><i class="icon-edit"></i> Editer</a> <a href="delete.php?id='.$this->id.'" class="btn btn-danger btn-mini"><i class="icon-trash icon-white"></i> Supprimer</a></td></tr>';
 		}
 
 }

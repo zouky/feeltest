@@ -24,7 +24,7 @@ if (isset($_POST['nom'])) {
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Session</title>
+        <title>Ajout de session</title>
         <link rel="stylesheet" href="../../libraries/bootstrap/css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="../../libraries/smoothness/jquery-ui-1.8.16.custom.css" type="text/css" />
         <link rel="stylesheet" href="../../css/style.css" type="text/css">
@@ -64,7 +64,7 @@ if (isset($_POST['nom'])) {
                 <input type='text' name='dateFin' maxlength='150' id="dateFin" value="0000-00-00" required /><br/><br/>
 
                 <br /><br />
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-primary">Creer</button>
             </form>
         </div>
 
