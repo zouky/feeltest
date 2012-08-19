@@ -56,26 +56,25 @@ class TestManager extends PdoManager {
         }
     }
 
-    		public function getTestById($id){
-			$query = $this->pdo->prepare('	
+    public function getTestById($id) {
+        $query = $this->pdo->prepare('	
 				SELECT *
 				FROM test
 				WHERE id = :id
 			');
-			
-			if($query){
-				$query->bindValue(':id', $id);
-				$query->execute();
-	
-				$result = $query->fetch(PDO::FETCH_ASSOC);
-				$test = new Test();
-				$test->initWithDBTest($result);
-					
-				$query->closeCursor();
-					
-			}
-                        return $test;
-		}
+
+        if ($query) {
+            $query->bindValue(':id', $id);
+            $query->execute();
+
+            $result = $query->fetch(PDO::FETCH_ASSOC);
+            $test = new Test();
+            $test->initWithDBTest($result);
+
+            $query->closeCursor();
+        }
+        return $test;
+    }
 
 }
 

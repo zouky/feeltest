@@ -1,6 +1,6 @@
 <?php
 
-	class activiteManager extends PdoManager {
+	class ActiviteManager extends PdoManager {
 		
 		public function getAllActivites(){
 			$query = $this->pdo->prepare('	

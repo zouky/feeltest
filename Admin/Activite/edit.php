@@ -8,22 +8,22 @@
 		$activite = $activiteManager->getActiviteById($_GET['id']);
 	}
 	
-	if(isset($_POST['id'], $_POST['nom'], $_POST['description'])){
+	if(isset($_POST['id'], $_POST['nom'],)){
 		$nom		 = $_POST['nom'];
 		$description     = $_POST['description'];
                 $commentaire     = $_POST['commentaire'];
 		$id              = (int)$_POST['id'];
 		
-		if(strlen($id) != 0 && strlen($nom) != 0 && strlen($description) != 0){
+		if(strlen($id) != 0 && strlen($nom) != 0){
 			$activiteManager = new ActiviteManager();
 			$activite = $activiteManager->getActiviteById($id);
 			
-			$activite->setNom($activite);
+			$activite->setNom($nom);
 			$activite->setDescription($description);
                         $activite->setCommentaire($commentaire);
 			$activiteManager->updateActivite($activite);
 			
-			header('Location: http://localhost/Feeltest/Admin/Activite');
+			header('Location: '.$siteUrl.'/Admin/Activite');
 		}
 	}
 ?>

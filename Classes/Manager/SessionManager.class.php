@@ -34,7 +34,7 @@ class SessionManager extends PdoManager {
         return $result;
     }
 
-    public function updateSession($session) {
+    public function updateSession(Session $session) {
         $query = $this->pdo->prepare('	
 				UPDATE session
 				SET nom = :nom, dateDebut = :dateDebut, dateFin = :dateFin, lieu = :lieu, idTest = :idTest, commentaire = :commentaire

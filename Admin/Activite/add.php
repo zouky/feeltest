@@ -3,10 +3,10 @@
 	$page = 2;
 		
 	// If creation of activity
-	if(isset($_POST['nom'], $_POST['description'])){
+	if(isset($_POST['nom'])){
 		extract($_POST);
 		
-		if(strlen($nom) != 0 && strlen($description) != 0){
+		if(strlen($nom)){
 			$newActivite 	 = new Activite(0, $nom, $description, $commentaire);
 			$activiteManager = new ActiviteManager();
 			$activiteManager->addActivite($newActivite);

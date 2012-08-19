@@ -1,7 +1,7 @@
 <?php
 require_once('../../_include.php');
 
-// If creation of restaurant
+// If creation of session
 if (isset($_POST['nom'])) {
     extract($_POST);
 
@@ -15,7 +15,7 @@ if (isset($_POST['nom'])) {
         $sessionManager = new sessionManager();
         $sessionManager->addSession($objSession);
 
-        //header('Location: '.$siteUrl.'/Admin/Session');
+        header('Location: '.$siteUrl.'/Admin/Session');
     }
 }
 ?>
@@ -57,7 +57,7 @@ if (isset($_POST['nom'])) {
                     ?>
                 </select>
                 <label for="commentaire">Commentaire</label>
-                <input type="text" name="commentaire" id="commentaire" placeholder="Commentaire" class="span6"/>
+                <textarea name="commentaire" class="span6" id="commentaire" placeholder="Commentaire"></textarea>
                 Date de début : <br/>
                 <input type='text' name='dateDebut' maxlength='150' id="dateDebut" value="0000-00-00" required /><br/><br/>
                 Date de fin : <br/>

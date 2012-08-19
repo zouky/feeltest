@@ -27,7 +27,7 @@ if (isset($_POST['nom'])) {
         $sessionManager = new sessionManager();
         $session = $sessionManager->getSessionById($id);
 
-        $session->setNom($session);
+        $session->setNom($nom);
         $session->setLieu($lieu);
         $session->setIdTest($idTest);
         $session->setCommentaire($commentaire);

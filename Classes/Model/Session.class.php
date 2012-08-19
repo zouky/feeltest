@@ -89,11 +89,11 @@ class Session {
     public function initWithDBSession($db_session) {
         $this->id = $db_session['id'];
         $this->nom = $db_session['nom'];
-        $this->client = $db_session['lieu'];
         $this->dateDebut = $db_session['dateDebut'];
         $this->dateFin = $db_session['dateFin'];
         $this->idTest = $db_session['idTest'];
         $this->commentaire = $db_session['commentaire'];
+        $this->lieu = $db_session['lieu'];
     }
 
     public function displayAsCell() {

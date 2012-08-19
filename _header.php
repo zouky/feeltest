@@ -17,12 +17,12 @@
                                             <a href="<?php echo $siteUrl; ?>/Admin/Testeur/">Testeurs</a>
 			       		</li>
 			       		<li class="">
-                                            <a href="<?php echo $siteUrl; ?>/Admin/Session/">Session</a>
+                                            <a href="<?php echo $siteUrl; ?>/Admin/Session/">Sessions</a>
 				       	</li>
-				       	<!--<li class="<?php if($page == 5) { echo 'active'; } ?>">
-				       		<a href="http://yoofoodapp.com/Admin/Table/">Tables</a>
+				       	<li class="">
+                                            <a href="<?php echo $siteUrl; ?>/Admin/Morphologie/">Morphologies</a>
 				       	</li>
-				       	<li class="<?php if($page == 6) { echo 'active'; } ?>">
+				       	<!--<li class="<?php if($page == 6) { echo 'active'; } ?>">
 				       		<a href="http://yoofoodapp.com/Admin/Order/">Orders</a>
 				       	</li>
 				       	<li class="<?php if($page == 7) { echo 'active'; } ?>">
